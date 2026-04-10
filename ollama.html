@@ -12,43 +12,49 @@ header h1 { font-size: 18px; color: #e94560; }
 #status { font-size: 12px; color: #888; }
 #status.online { color: #4caf50; }
 .main { display: flex; flex: 1; overflow: hidden; }
-.sidebar { width: 260px; background: #16213e; border-right: 1px solid #0f3460; display: flex; flex-direction: column; flex-shrink: 0; }
-.sidebar-header { padding: 12px 16px; font-size: 13px; color: #888; border-bottom: 1px solid #0f3460; display: flex; justify-content: space-between; align-items: center; }
+.sidebar { width: 240px; background: #16213e; border-right: 1px solid #0f3460; display: flex; flex-direction: column; flex-shrink: 0; }
+.sidebar-header { padding: 10px 14px; font-size: 12px; color: #888; border-bottom: 1px solid #0f3460; display: flex; justify-content: space-between; align-items: center; }
 .sidebar-header span { color: #e94560; font-weight: 500; }
-#file-list { flex: 1; overflow-y: auto; padding: 8px; }
-.file-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; border: 1px solid transparent; }
+#file-list { flex: 1; overflow-y: auto; padding: 6px; }
+.file-item { padding: 7px 10px; border-radius: 6px; cursor: pointer; font-size: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; border: 1px solid transparent; }
 .file-item:hover { background: #0f3460; }
 .file-item.active { background: #0f3460; border-color: #e94560; }
 .file-item .fname { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
-.file-item .del { color: #e94560; background: none; border: none; cursor: pointer; font-size: 16px; padding: 0 4px; flex-shrink: 0; }
-.file-item .modified { width: 6px; height: 6px; border-radius: 50%; background: #e94560; flex-shrink: 0; margin-right: 6px; display: none; }
-.file-item.modified-file .modified { display: block; }
-label.upload-btn { margin: 12px; background: #0f3460; border: 1px dashed #e94560; border-radius: 8px; padding: 10px; text-align: center; cursor: pointer; font-size: 13px; color: #e94560; display: block; }
+.file-item .del { color: #555; background: none; border: none; cursor: pointer; font-size: 15px; padding: 0 4px; flex-shrink: 0; }
+.file-item .del:hover { color: #e94560; }
+label.upload-btn { margin: 10px; background: #0f3460; border: 1px dashed #e94560; border-radius: 8px; padding: 10px; text-align: center; cursor: pointer; font-size: 12px; color: #e94560; display: block; }
 label.upload-btn:hover { background: #1a1a2e; }
 #file-input { display: none; }
-.editor-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
-.editor-toolbar { background: #16213e; padding: 8px 16px; border-bottom: 1px solid #0f3460; display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; }
-.editor-toolbar span { font-size: 13px; color: #888; margin-right: 8px; }
-button.tb-btn { background: #0f3460; border: 1px solid #0f3460; border-radius: 6px; padding: 6px 12px; color: #e0e0e0; font-size: 12px; cursor: pointer; }
+.editor-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative; }
+.editor-toolbar { background: #16213e; padding: 8px 14px; border-bottom: 1px solid #0f3460; display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; }
+.editor-toolbar .fname-label { font-size: 12px; color: #888; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+button.tb-btn { background: #0f3460; border: 1px solid #0f3460; border-radius: 6px; padding: 5px 12px; color: #e0e0e0; font-size: 12px; cursor: pointer; white-space: nowrap; }
 button.tb-btn:hover { border-color: #e94560; color: #e94560; }
 button.tb-btn.primary { background: #e94560; border-color: #e94560; color: white; }
 button.tb-btn.primary:hover { background: #c73652; }
 button.tb-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 #editor { flex: 1; background: #0d0d1a; color: #e0e0e0; border: none; padding: 16px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 1.6; resize: none; outline: none; overflow-y: auto; }
-.chat-panel { width: 380px; background: #16213e; border-left: 1px solid #0f3460; display: flex; flex-direction: column; flex-shrink: 0; }
-.chat-panel-header { padding: 12px 16px; border-bottom: 1px solid #0f3460; font-size: 13px; color: #888; }
-#messages { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
-.msg { padding: 8px 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+#editor.streaming { border-top: 2px solid #e94560; }
+#streaming-indicator { position: absolute; top: 44px; right: 12px; background: #e94560; color: white; font-size: 11px; padding: 3px 10px; border-radius: 10px; display: none; }
+#streaming-indicator.show { display: block; }
+.chat-panel { width: 360px; background: #16213e; border-left: 1px solid #0f3460; display: flex; flex-direction: column; flex-shrink: 0; }
+.chat-panel-header { padding: 10px 14px; border-bottom: 1px solid #0f3460; font-size: 12px; color: #888; }
+#messages { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.msg { padding: 8px 12px; border-radius: 10px; font-size: 12px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
 .msg.user { background: #0f3460; align-self: flex-end; max-width: 90%; border-bottom-right-radius: 4px; }
 .msg.assistant { background: #1a1a2e; align-self: flex-start; max-width: 95%; border: 1px solid #0f3460; border-bottom-left-radius: 4px; }
 .msg.thinking { color: #888; font-style: italic; }
+.msg.success { border-color: #4caf50; color: #4caf50; }
+.msg.error { border-color: #e94560; color: #e94560; }
 #chat-input-area { padding: 10px; border-top: 1px solid #0f3460; display: flex; flex-direction: column; gap: 8px; }
-#prompt { background: #1a1a2e; border: 1px solid #0f3460; border-radius: 8px; padding: 8px 12px; color: #e0e0e0; font-size: 13px; resize: none; min-height: 60px; max-height: 100px; outline: none; width: 100%; }
+#prompt { background: #1a1a2e; border: 1px solid #0f3460; border-radius: 8px; padding: 8px 12px; color: #e0e0e0; font-size: 12px; resize: none; min-height: 55px; max-height: 100px; outline: none; width: 100%; }
 #prompt:focus { border-color: #e94560; }
 .chat-actions { display: flex; gap: 6px; }
-.api-config { padding: 10px 16px; border-top: 1px solid #0f3460; display: flex; gap: 6px; align-items: center; }
-.api-config input { flex: 1; background: #1a1a2e; border: 1px solid #0f3460; border-radius: 6px; padding: 5px 8px; color: #e0e0e0; font-size: 11px; outline: none; }
+.api-config { padding: 8px 14px; border-top: 1px solid #0f3460; display: flex; gap: 6px; align-items: center; }
+.api-config input { flex: 1; background: #1a1a2e; border: 1px solid #0f3460; border-radius: 6px; padding: 4px 8px; color: #e0e0e0; font-size: 11px; outline: none; }
 .api-config label { font-size: 11px; color: #555; white-space: nowrap; }
+.progress-bar { height: 2px; background: #e94560; width: 0%; transition: width 0.1s; display: none; }
+.progress-bar.show { display: block; }
 </style>
 </head>
 <body>
@@ -63,35 +69,37 @@ button.tb-btn:disabled { opacity: 0.4; cursor: not-allowed; }
     <div class="sidebar-header">Arquivos <span id="file-count">0</span></div>
     <div id="file-list"></div>
     <label class="upload-btn" for="file-input">+ Carregar arquivos</label>
-    <input type="file" id="file-input" multiple accept=".html,.js,.ts,.jsx,.tsx,.css,.json,.md,.txt,.php,.py,.sql,.env,.vue,.scss">
+    <input type="file" id="file-input" multiple accept=".html,.js,.ts,.jsx,.tsx,.css,.json,.md,.txt,.php,.py,.sql,.env,.vue,.scss,.xml">
   </div>
 
   <div class="editor-area">
     <div class="editor-toolbar">
-      <span id="current-file">Nenhum arquivo</span>
-      <button class="tb-btn" onclick="saveFile()" id="save-btn" disabled>Salvar alterações</button>
-      <button class="tb-btn" onclick="downloadFile()" id="download-btn" disabled>Baixar arquivo</button>
-      <button class="tb-btn" onclick="downloadAll()" id="download-all-btn" disabled>Baixar todos (.zip)</button>
+      <span class="fname-label" id="current-file">Nenhum arquivo selecionado</span>
+      <button class="tb-btn" onclick="undoEdit()" id="undo-btn" disabled>Desfazer</button>
+      <button class="tb-btn" onclick="downloadFile()" id="download-btn" disabled>Baixar</button>
+      <button class="tb-btn" onclick="downloadAll()" id="download-all-btn" disabled>Baixar todos</button>
     </div>
-    <textarea id="editor" placeholder="Selecione um arquivo na lista para editar..." readonly></textarea>
+    <div class="progress-bar" id="progress-bar"></div>
+    <div id="streaming-indicator">Editando...</div>
+    <textarea id="editor" placeholder="Selecione um arquivo para editar..." readonly></textarea>
   </div>
 
   <div class="chat-panel">
-    <div class="chat-panel-header">Chat com Gemma — peça para editar o arquivo atual</div>
+    <div class="chat-panel-header">Chat — descreva o que quer editar</div>
     <div id="messages">
-      <div class="msg assistant">Ola! Carregue seus arquivos e me diga o que quer editar. Ex: "Adicione um botao de WhatsApp no rodape" ou "Corrija os erros de JavaScript".</div>
+      <div class="msg assistant">Ola! Carregue seus arquivos HTML, JS, CSS e me diga o que quer modificar. O codigo vai aparecer no editor em tempo real enquanto edito.</div>
     </div>
     <div id="chat-input-area">
-      <textarea id="prompt" placeholder="Ex: Adicione um menu responsivo no topo..."></textarea>
+      <textarea id="prompt" placeholder="Ex: Adicione um botao flutuante de WhatsApp..."></textarea>
       <div class="chat-actions">
-        <button class="tb-btn primary" onclick="askAI()" id="ask-btn" style="flex:1">Enviar para IA</button>
-        <button class="tb-btn" onclick="applyLastCode()" id="apply-btn" disabled>Aplicar codigo</button>
+        <button class="tb-btn primary" onclick="askAI()" id="ask-btn" style="flex:1">Editar com IA</button>
+        <button class="tb-btn" onclick="revertEdit()" id="revert-btn" disabled title="Voltar versao anterior">Reverter</button>
       </div>
     </div>
     <div class="api-config">
       <label>API:</label>
       <input type="text" id="api-url" value="http://45.79.213.38:11434" placeholder="http://IP:11434">
-      <button class="tb-btn" onclick="checkStatus()">Testar</button>
+      <button class="tb-btn" onclick="checkStatus()">OK</button>
     </div>
   </div>
 </div>
@@ -99,8 +107,8 @@ button.tb-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 let files = {};
+let previousVersions = {};
 let currentFile = null;
-let lastCode = null;
 
 function getAPI() { return document.getElementById('api-url').value.trim(); }
 
@@ -123,6 +131,7 @@ document.getElementById('file-input').addEventListener('change', async function(
   this.value = '';
   renderFileList();
   if (Object.keys(files).length > 0 && !currentFile) openFile(Object.keys(files)[0]);
+  document.getElementById('download-all-btn').disabled = Object.keys(files).length === 0;
 });
 
 function renderFileList() {
@@ -130,18 +139,17 @@ function renderFileList() {
   el.innerHTML = '';
   const names = Object.keys(files);
   document.getElementById('file-count').textContent = names.length;
-  document.getElementById('download-all-btn').disabled = names.length === 0;
   names.forEach(name => {
     const div = document.createElement('div');
     div.className = 'file-item' + (name === currentFile ? ' active' : '');
-    div.innerHTML = `<div class="modified"></div><div class="fname" title="${name}">${name}</div><button class="del" onclick="deleteFile('${name}')">x</button>`;
-    div.querySelector('.fname').onclick = () => openFile(name);
+    div.innerHTML = `<div class="fname" title="${name}">${name}</div><button class="del" onclick="event.stopPropagation();deleteFile('${name}')">x</button>`;
+    div.addEventListener('click', () => openFile(name));
     el.appendChild(div);
   });
 }
 
 function openFile(name) {
-  if (currentFile) {
+  if (currentFile && document.getElementById('editor').value !== files[currentFile]) {
     files[currentFile] = document.getElementById('editor').value;
   }
   currentFile = name;
@@ -149,26 +157,24 @@ function openFile(name) {
   editor.value = files[name];
   editor.readOnly = false;
   document.getElementById('current-file').textContent = name;
-  document.getElementById('save-btn').disabled = false;
   document.getElementById('download-btn').disabled = false;
+  document.getElementById('undo-btn').disabled = !previousVersions[name];
+  document.getElementById('revert-btn').disabled = !previousVersions[name];
   renderFileList();
-}
-
-function saveFile() {
-  if (!currentFile) return;
-  files[currentFile] = document.getElementById('editor').value;
-  addMessage('assistant', 'Arquivo "' + currentFile + '" salvo!');
 }
 
 function deleteFile(name) {
   delete files[name];
+  delete previousVersions[name];
   if (currentFile === name) {
     currentFile = null;
-    document.getElementById('editor').value = '';
-    document.getElementById('editor').readOnly = true;
-    document.getElementById('current-file').textContent = 'Nenhum arquivo';
-    document.getElementById('save-btn').disabled = true;
+    const editor = document.getElementById('editor');
+    editor.value = '';
+    editor.readOnly = true;
+    document.getElementById('current-file').textContent = 'Nenhum arquivo selecionado';
     document.getElementById('download-btn').disabled = true;
+    document.getElementById('undo-btn').disabled = true;
+    document.getElementById('revert-btn').disabled = true;
   }
   renderFileList();
 }
@@ -190,9 +196,21 @@ async function downloadAll() {
   const blob = await zip.generateAsync({ type: 'blob' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'arquivos.zip';
+  a.download = 'arquivos-editados.zip';
   a.click();
 }
+
+function undoEdit() {
+  if (!currentFile || !previousVersions[currentFile]) return;
+  files[currentFile] = previousVersions[currentFile];
+  document.getElementById('editor').value = previousVersions[currentFile];
+  delete previousVersions[currentFile];
+  document.getElementById('undo-btn').disabled = true;
+  document.getElementById('revert-btn').disabled = true;
+  addMessage('assistant', 'Versao anterior restaurada!');
+}
+
+function revertEdit() { undoEdit(); }
 
 function addMessage(role, text) {
   const div = document.createElement('div');
@@ -204,33 +222,50 @@ function addMessage(role, text) {
 }
 
 function extractCode(text) {
-  const match = text.match(/```[\w]*\n([\s\S]*?)```/);
-  return match ? match[1] : null;
+  const match = text.match(/```[\w]*\n?([\s\S]*?)```/);
+  return match ? match[1].trim() : null;
+}
+
+function setStreaming(active) {
+  const editor = document.getElementById('editor');
+  const indicator = document.getElementById('streaming-indicator');
+  const progress = document.getElementById('progress-bar');
+  if (active) {
+    editor.classList.add('streaming');
+    indicator.classList.add('show');
+    progress.classList.add('show');
+    progress.style.width = '0%';
+  } else {
+    editor.classList.remove('streaming');
+    indicator.classList.remove('show');
+    progress.classList.remove('show');
+    progress.style.width = '100%';
+    setTimeout(() => { progress.style.width = '0%'; progress.classList.remove('show'); }, 300);
+  }
 }
 
 async function askAI() {
-  if (!currentFile) { addMessage('assistant', 'Selecione um arquivo primeiro!'); return; }
-  const prompt = document.getElementById('prompt').value.trim();
+  if (!currentFile) { addMessage('error', 'Selecione um arquivo primeiro!'); return; }
+  const promptEl = document.getElementById('prompt');
+  const prompt = promptEl.value.trim();
   if (!prompt) return;
 
   files[currentFile] = document.getElementById('editor').value;
-  const fileContent = files[currentFile];
+  previousVersions[currentFile] = files[currentFile];
 
-  const userMsg = prompt + ' [' + currentFile + ']';
-  addMessage('user', userMsg);
-  document.getElementById('prompt').value = '';
+  addMessage('user', prompt + ' [' + currentFile + ']');
+  promptEl.value = '';
 
   const btn = document.getElementById('ask-btn');
   btn.disabled = true;
+  setStreaming(true);
 
-  const systemPrompt = `Voce e um assistente de codigo. O usuario vai pedir modificacoes em arquivos. 
-Sempre responda com o codigo completo modificado dentro de blocos de codigo markdown.
-Exemplo: \`\`\`html\n(codigo completo aqui)\n\`\`\`
-Nao explique muito, so faca a modificacao pedida e retorne o arquivo completo.`;
+  const editor = document.getElementById('editor');
+  editor.value = '';
 
-  const userContent = `Arquivo: ${currentFile}\n\nConteudo atual:\n\`\`\`\n${fileContent}\n\`\`\`\n\nPedido: ${prompt}`;
+  const systemPrompt = `Voce e um assistente de edicao de codigo. Retorne APENAS o codigo completo modificado dentro de um bloco de codigo markdown, sem explicacoes antes ou depois. Formato: \`\`\`html\n(codigo aqui)\n\`\`\``;
 
-  const assistantDiv = addMessage('assistant thinking', 'Editando...');
+  const userContent = `Arquivo: ${currentFile}\n\nConteudo:\n\`\`\`\n${previousVersions[currentFile]}\n\`\`\`\n\nModificacao: ${prompt}`;
 
   try {
     const response = await fetch(getAPI() + '/api/chat', {
@@ -246,12 +281,14 @@ Nao explique muito, so faca a modificacao pedida e retorne o arquivo completo.`;
       })
     });
 
-    assistantDiv.textContent = '';
-    assistantDiv.className = 'msg assistant';
     let fullReply = '';
+    let inCodeBlock = false;
+    let codeBuffer = '';
+    let headerSkipped = false;
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
+
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -260,33 +297,58 @@ Nao explique muito, so faca a modificacao pedida e retorne o arquivo completo.`;
         try {
           const data = JSON.parse(line);
           if (data.message && data.message.content) {
-            fullReply += data.message.content;
-            assistantDiv.textContent = fullReply;
-            assistantDiv.scrollIntoView({ behavior: 'smooth' });
+            const chunk = data.message.content;
+            fullReply += chunk;
+
+            for (let i = 0; i < chunk.length; i++) {
+              codeBuffer += chunk[i];
+
+              if (!inCodeBlock && codeBuffer.includes('```')) {
+                const afterTick = codeBuffer.indexOf('```') + 3;
+                const rest = codeBuffer.slice(afterTick);
+                if (rest.includes('\n')) {
+                  inCodeBlock = true;
+                  headerSkipped = true;
+                  const codeStart = rest.indexOf('\n') + 1;
+                  editor.value = rest.slice(codeStart);
+                  codeBuffer = '';
+                }
+              } else if (inCodeBlock) {
+                if (codeBuffer.endsWith('```')) {
+                  const finalCode = editor.value.slice(0, editor.value.length - 2);
+                  editor.value = finalCode;
+                  inCodeBlock = false;
+                } else {
+                  editor.value = codeBuffer.replace(/^```[\w]*\n?/, '');
+                }
+                editor.scrollTop = editor.scrollHeight;
+              }
+            }
           }
         } catch(e) {}
       }
     }
 
-    lastCode = extractCode(fullReply);
-    if (lastCode) {
-      document.getElementById('apply-btn').disabled = false;
-      addMessage('assistant', 'Codigo pronto! Clique em "Aplicar codigo" para substituir o arquivo.');
+    const finalCode = extractCode(fullReply);
+    if (finalCode) {
+      editor.value = finalCode;
+      files[currentFile] = finalCode;
+      document.getElementById('undo-btn').disabled = false;
+      document.getElementById('revert-btn').disabled = false;
+      addMessage('success', 'Pronto! Arquivo editado. Baixe quando quiser.');
+    } else {
+      editor.value = previousVersions[currentFile];
+      files[currentFile] = previousVersions[currentFile];
+      addMessage('error', 'Nao consegui extrair o codigo. Tente novamente com uma instrucao mais especifica.');
     }
-  } catch(e) {
-    assistantDiv.textContent = 'Erro ao conectar. Verifique o IP da API.';
-    assistantDiv.className = 'msg assistant';
-  }
-  btn.disabled = false;
-}
 
-function applyLastCode() {
-  if (!lastCode || !currentFile) return;
-  document.getElementById('editor').value = lastCode;
-  files[currentFile] = lastCode;
-  lastCode = null;
-  document.getElementById('apply-btn').disabled = true;
-  addMessage('assistant', 'Codigo aplicado no arquivo "' + currentFile + '"! Confira e baixe quando quiser.');
+  } catch(e) {
+    editor.value = previousVersions[currentFile] || '';
+    addMessage('error', 'Erro ao conectar. Verifique o IP da API.');
+  }
+
+  setStreaming(false);
+  btn.disabled = false;
 }
 
 document.getElementById('prompt').addEventListener('keydown', function(e) {
